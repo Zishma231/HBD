@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Umer 🌙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== BASIC RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1b2735, #090a0f);
+  color: white;
+  overflow-y: auto; /* ✅ SCROLL FIX */
+}
+
+/* ===== STARS ===== */
+.star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ===== MOON ===== */
+.moon {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 90px;
+  height: 90px;
+  background: #f5f3ce;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #fff;
+}
+
+/* ===== SHOOTING STAR ===== */
+.shooting-star {
+  position: fixed;
+  top: -50px;
+  left: -100px;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 6s linear infinite;
+}
+
+@keyframes shoot {
+  0% { transform: translate(0,0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translate(120vw, 80vh); opacity: 0; }
+}
+
+/* ===== CENTER AREA ===== */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+/* ===== SURPRISE BUTTON ===== */
+.surprise-btn {
+  background: linear-gradient(45deg, #ff5fa2, #ff9bd4);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 10px 25px rgba(255,95,162,0.4);
+}
+
+/* ===== LETTER CARD ===== */
+.card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  display: none;
+  max-height: 90vh;       /* ✅ SCROLL FIX */
+  overflow-y: auto;      /* ✅ SCROLL FIX */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.from {
+  text-align: center;
+  margin-top: 25px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Moon & Sky -->
+<div class="moon"></div>
+<div class="shooting-star"></div>
+
+<!-- Random Stars -->
+<script>
+for(let i=0;i<40;i++){
+  let star=document.createElement("div");
+  star.className="star";
+  star.style.top=Math.random()*100+"vh";
+  star.style.left=Math.random()*100+"vw";
+  star.style.animationDelay=Math.random()*3+"s";
+  document.body.appendChild(star);
+}
+</script>
+
+<div class="container">
+  <div>
+    <button class="surprise-btn" onclick="showLetter()">🌙 Click for Surprise ✨</button>
+
+    <div class="card" id="letter">
+      <h1>🎉 Happy Birthday Umer 🥳❤️</h1>
+
+      <p>Happiest birthday, my dear Anabelle 🥳❤️  
+      I really hope you’re doing great in your life. And may success love you so much that it refuses to leave you alone. Honestly, I won’t even be jealous… okay maybe just a little 😌</p>
+
+      <p>And listen — I’m always here for you. Alwaaayyyyyysss. In your good days, bad days, lazy days, and those days when you act strong but inside you just want someone to hold you and say “it’s okay.” Don’t worry, that someone is me. I’m always yours — fully, honestly, no conditions.</p>
+
+      <p>Yes, we’re at a distance, and yes, it hurts 🙂‍↕️ Sometimes I wish I could just show up in front of you, steal a smile, annoy you a little, and then give you the tightest hug. Distance is so annoying, but it can’t stop feelings.</p>
+
+      <p>I pray for you every day — for your happiness, your peace, your health, your success, and your smile. You live soooooo faaarr away, yet you’re always so close to my heart 🫀.</p>
+
+      <p>Today is your birthday, so please smile extra, laugh louder, and feel special — because you truly are. Eat cake like rules don’t exist and enjoy every second.</p>
+
+      <p>So never forget — you’re loved, you’re supported, and you’re never alone. No matter the distance, no matter the situation, I’m always here.</p>
+
+      <div class="from">
+        — With love, always 💖<br>
+        Zishma 😌💋✨
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showLetter(){
+  document.getElementById("letter").style.display="block";
+}
+</script>
+
+</body>
+</html>
